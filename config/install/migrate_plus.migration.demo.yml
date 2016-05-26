@@ -14,7 +14,7 @@ source:
   fields:
     - id
     - body
-    - title
+    - title_field
 
 destination:
   plugin: entity:node
@@ -25,5 +25,8 @@ process:
     default_value: article
 
   title: title
-  body:
-    value: body
+  'body/value': body
+  'body/summary': body
+  'body/format':
+    plugin: default_value
+    default_value: full_html
