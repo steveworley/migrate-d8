@@ -25,4 +25,5 @@ process:
     default_value: article
 
   title: title
-  field_body: body
+  body:
+    value: body
