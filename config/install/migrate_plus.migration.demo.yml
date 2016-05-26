@@ -1,0 +1,28 @@
+# Migration source for content
+id: demo
+label: Demo
+migration_group: UDN
+migration_dependencies: {}
+
+source:
+  plugin: json_source
+  path: http://jsonplaceholder.typicode.com/posts
+  headers:
+    Accept: 'application/json'
+  identifier: id
+  identifierDepth: 0
+  fields:
+    - id
+    - body
+    - title
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: article
+
+  title: title
+  field_body: body
